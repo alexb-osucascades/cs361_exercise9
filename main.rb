@@ -1,48 +1,49 @@
 class Employee
 
   def prepare(bike)
-    if bike.class == BmxBike
-      bike.clean
-    elsif bike.class == RoadBike
-      bike.lubricate_gears
-    elsif bike.class == MountainBike
-      bike.adjust_suspension
-    elsif bike.class == Tricycle
-      bike.adjust_seat
-    else
-      puts 'Uhh, boss, I dunno how to do that.'
-    end
+    bike.prepare
   end
 
 end
 
-class BmxBike
+class Bike
 
-  def clean
+  def prepare
+    # This message should never show
+
+    # In this world... Bikes can speak... : )
+    puts 'Uhh, boss, I dunno how to do that.'
+  end
+
+end
+
+class BmxBike < Bike
+
+  def prepare
     puts 'Cleaning...'
   end
 
 end
 
-class RoadBike
+class RoadBike < Bike
 
-  def lubricate_gears
+  def prepare
     puts 'Lubricating gears...'
   end
 
 end
 
-class MountainBike
+class MountainBike < Bike
 
-  def adjust_suspension
+  def prepare
     puts 'Adjusting suspension...'
   end
 
 end
 
-class Tricycle
+class Tricycle < Bike
 
-  def adjust_seat
+  def prepare
     puts 'Adjusting seat...'
   end
 
